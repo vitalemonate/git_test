@@ -1,33 +1,43 @@
 # 创建版本库
 ## 指令：
-git init
+**git init**: 初始化仓库
 
-git add xxx
+**git add xxx** 添加文件到暂存区
 
-git commit -m "balabala"
+**git commit -m "balabala"** 将暂存区内容添加到仓库中
 
 # 版本回退：
 ## 指令：
-git status: 用于显示工作目录和暂存区的状态
+**git status**: 用于显示工作目录和暂存区的状态
 
 
-git diff: 当工作区有改动，临时区为空，diff的对比是“工作区与最后一次commit提交的仓库的共同文件”；当工作区有改动，临时区不为空，diff对比的是“工作区与暂存区的共同文件”。
+**git diff**: 当工作区有改动，临时区为空，diff的对比是“工作区与最后一次commit提交的仓库的共同文件”；当工作区有改动，临时区不为空，diff对比的是“工作区与暂存区的共同文件”。
 
-git log: 按时间先后顺序列出所有的提交，最近的更新排在最上面
+**git log**: 按时间先后顺序列出所有的提交，最近的更新排在最上面
 
 ## 总结：
-1.HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id
+1.HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令**git reset --hard commit_id**
 
-2.穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
+2.穿梭前，用**git log**可以查看提交历史，以便确定要回退到哪个版本。
 
-3.要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
+3.要重返未来，用**git reflog**查看命令历史，以便确定要回到未来的哪个版本。
 
 # 工作区和暂存区:
-git add命令实际上就是把要提交的所有修改放到暂存区（Stage），然后，执行git commit就可以一次性把暂存区的所有修改提交到分支
+**git add**命令实际上就是把要提交的所有修改放到暂存区（Stage），然后，执行**git commit**就可以一次性把暂存区的所有修改提交到分支
 
 # 撤销修改
-场景1：当你改乱了**工作区**某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file
+场景1：当你改乱了**工作区**某个文件的内容，想直接丢弃工作区的修改时，用命令**git checkout -- file**
 
-场景2：当你不但改乱了工作区某个文件的内容，还添加到了**暂存区**时，想丢弃修改，分两步，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作。
+场景2：当你不但改乱了工作区某个文件的内容，还添加到了**暂存区**时，想丢弃修改，分两步，第一步用命令**git reset HEAD file**，就回到了场景1，第二步按场景1操作。
 
 场景3：已经提交了不合适的修改到**版本库**时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。
+
+最新版本的git已经使用git restore 代替了原来的reset和checkout命令了，如下：
+
+git resotre readme （使用 "git restore <文件>..." 丢弃工作区的改动）
+
+  (use "git restore <file>..." to discard changes in working directory)
+
+git restore --staged readme  （使用 "git restore --staged <文件>..." 以取消暂存）
+
+  (use "git restore --staged <file>..." to unstage)
