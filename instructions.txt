@@ -1,0 +1,6 @@
+git init
+git add xxx
+git commit -m "balabala"
+
+git status
+git diff
