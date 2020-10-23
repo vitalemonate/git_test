@@ -90,3 +90,12 @@
 合并某分支到当前分支：**git merge name**
 
 删除分支：**git branch -d name**
+
+# 分支处理策略
+首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活
+
+那在哪干活呢？干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本
+
+团队合作的分支看起来就像这样
+
+![avatar](https://github.com/vitalemonate/learngit/blob/main/pics/3.png)
