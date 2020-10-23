@@ -39,7 +39,7 @@
 
 最新版本的git已经使用**git restore**代替了原来的reset和checkout命令了，如下：
 
-**git resotre readme**（使用 "git restore <文件>..." 丢弃工作区的改动）
+**git restore readme**（使用 "git restore <文件>..." 丢弃工作区的改动）
 
   (use "git restore <file>..." to discard changes in working directory)
 
