@@ -91,7 +91,7 @@
 
 删除分支：**git branch -d name**
 
-##--no-ff方式的git merge
+## --no-ff方式的git merge
 
 ![avatar](https://github.com/vitalemonate/learngit/blob/main/pics/3.png)
 
@@ -132,3 +132,12 @@
 没有冲突或者解决掉冲突后，再用**git push origin branch-name**推送就能成功
 
 如果**git pull**提示**no tracking information**，则说明本地分支和远程分支的链接关系没有创建，用命令**git branch --set-upstream-to branch-name origin/branch-name**
+
+# 标签管理
+标签是版本库的一个快照,每个标签都与一个commit绑定
+
+命令**git tag tagname**用于新建一个标签，默认为**HEAD**，也可以指定一个**commit id**
+
+命令**git tag -a tagname -m "blablabla..."**可以指定标签信息
+
+命令git tag可以查看所有标签
