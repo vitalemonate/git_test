@@ -5,7 +5,7 @@
 **git add xxx** 添加文件到暂存区
 
 **git commit -m "balabala"** 将暂存区内容添加到仓库中
-
+***
 # 版本回退：
 ## 指令：
 **git status**: 用于显示工作目录和暂存区的状态
@@ -14,7 +14,7 @@
 **git diff**: 当工作区有改动，临时区为空，diff的对比是“工作区与最后一次commit提交的仓库的共同文件”；当工作区有改动，临时区不为空，diff对比的是“工作区与暂存区的共同文件”。
 
 **git log**: 按时间先后顺序列出所有的提交，最近的更新排在最上面
-
+***
 ## 总结：
 1.HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令**git reset --hard commit_id**
 
@@ -28,8 +28,7 @@
 ![avatar](https://github.com/vitalemonate/learngit/blob/main/pics/1.jpg)
 
 ![avatar](https://github.com/vitalemonate/learngit/blob/main/pics/2.png)
-
-
+***
 # 撤销修改
 场景1：当你改乱了**工作区**某个文件的内容，想直接丢弃工作区的修改时，用命令**git checkout -- file**, **git checkout**其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”
 
@@ -49,7 +48,7 @@
 
 ## 删除文件
 **git rm**: 删除工作区文件，并且将这次删除放入暂存区, 注意要删除的文件是**没有修改过的**，就是说和当前版本库文件的内容相同
-
+***
 # 添加远程库
 **git remote add origin git@github.com:wanghao/learngit.git**
 
@@ -74,7 +73,7 @@
 **git remote show origin**
 
 **cat .git/config**
-
+***
 # 分支管理
 ## 创建与合并分支
 查看本地分支：**git branch**
@@ -132,13 +131,13 @@
 没有冲突或者解决掉冲突后，再用**git push origin branch-name**推送就能成功
 
 如果**git pull**提示**no tracking information**，则说明本地分支和远程分支的链接关系没有创建，用命令**git branch --set-upstream-to branch-name origin/branch-name**
-
+***
 # 标签管理
 标签是版本库的一个快照,每个标签都与一个commit绑定
 
 命令**git tag tagname**用于新建一个标签，默认为**HEAD**，也可以指定一个**commit id**
 
-命令**git tag -a tagname -m "blablabla..."**可以指定标签信息
+命令**git tag -a tagname -m blablabla**可以指定标签信息
 
 命令**git tag**可以查看所有标签
 
