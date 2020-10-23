@@ -25,6 +25,11 @@
 # 工作区和暂存区:
 **git add**命令实际上就是把要提交的所有修改放到暂存区（Stage），然后，执行**git commit**就可以一次性把暂存区的所有修改提交到分支
 
+![avatar](https://github.com/vitalemonate/learngit/blob/main/pics/pic0.png)
+
+![avatar](https://github.com/vitalemonate/learngit/blob/main/pics/git-command.jpg)
+
+
 # 撤销修改
 场景1：当你改乱了**工作区**某个文件的内容，想直接丢弃工作区的修改时，用命令**git checkout -- file**, **git checkout**其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”
 
@@ -44,3 +49,28 @@
 
 ## 删除文件
 **git rm**: 删除工作区文件，并且将这次删除放入暂存区, 注意要删除的文件是**没有修改过的**，就是说和当前版本库文件的内容相同
+
+# 添加远程库
+git remote add origin git@github.com:wanghao/learngit.git
+
+关于origin:远程库的名字就是origin，这是Git默认的叫法，也可以改成别的，但是origin这个名字一看就知道是远程库。
+
+## 本地向远程库推送内容
+git push origin <本地分支名>:<远程分支名> 本地分支向指定远程分支推送
+
+git push origin <本地分支名> 将本地当前分支 推送到与本地当前分支同名的远程分支上
+
+git push 将本地当前分支推送到与本地当前分支同名的远程分支上
+
+第二种和第三种方式需要在第一次使用时将本地分支与远程同名分支相关联：
+
+git push --set-upstream origin <本地分支名>
+
+简写方式：git push -u origin <本地分支名>
+
+## 查看本地分支与远程分支的关联
+git branch -vv
+
+git remote show origin
+
+cat .git/config
