@@ -113,10 +113,22 @@
 2 由于疏忽，本应该在dev分支开发的内容，却在master上进行了开发，需要重新切回到dev分支上进行开发，可以用git stash将内容保存至堆栈中，切回到dev分支后，再次恢复内容即可。
 
 ### 恢复现场
-**git stash apply**恢复，但是恢复后，stash内容并不删除，需要用**git stash drop**来删除
+**git stash apply** 恢复，但是恢复后，stash内容并不删除，需要用**git stash drop**来删除
 
-**git stash pop**，恢复的同时把stash内容也删了
+**git stash pop** 恢复的同时把stash内容也删了
 
-**git stash pop stash@{$num}**可以恢复指定num的内容并在stash中删除
+**git stash pop stash@{$num}** 可以恢复指定num的内容并在stash中删除
 
 **git stash list** 可以查看stash了哪些存储
+
+## 多人协作
+### 多人协作的工作模式通常是这样
+首先，可以试图用**git push origin branch-name** 推送自己的修改
+
+如果推送失败，则因为远程分支比你的本地更新，需要先用**git pull**试图合并
+
+如果合并有冲突，则解决冲突，并在本地提交
+
+没有冲突或者解决掉冲突后，再用**git push origin branch-name**推送就能成功
+
+如果**git pull**提示**no tracking information**，则说明本地分支和远程分支的链接关系没有创建，用命令**git branch --set-upstream-to branch-name origin/branch-name**
