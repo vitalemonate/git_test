@@ -117,4 +117,6 @@
 
 **git stash pop**，恢复的同时把stash内容也删了
 
+**git stash pop stash@{$num}**可以恢复指定num的内容并在stash中删除
+
 **git stash list** 可以查看stash了哪些存储
